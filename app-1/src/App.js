@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      input: ''
+    }
+  }
+
+  // changeInput(evt) {
+  //   this.setState({
+  //     input: evt
+  //   })
+  // }
+
+  handleChange(prop, val) {                 //This method allows you to use one method to track lots of form changes
+    this.setState({
+      [prop]: val                           //The square brackets stops it from adding a key on state called 'prop'
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <input onChange={(e) => this.handleChange('input', e.target.value)}/>
+        <p>{this.state.input}</p>
       </div>
     );
   }

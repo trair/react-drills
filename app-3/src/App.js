@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      list: ['spaghetti', 'ice cream', 'sushi', 'bologna', 'cheese'],
+      input: '',
+    }
+  }
+
+  changeInput(evt) {
+    this.setState({
+      input: evt.target.value
+    })
+  }
+
   render() {
+    let filteredList = this.state.list.filter(el => (
+      el.includes(this.state.input)
+    )).map((el, i) => (
+      <h2 key={i}>{el}</h2>
+    ))
+
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <input onChange={(evt) => this.changeInput(evt)} />
+        <br />
+        {filteredList}
+        {/* {filteredList.map((el, i) => (                          //if I didn't chain the map function to filteredList, this code would work as well
+          <h2 key={i}>{el}</h2>
+        ))} */}
       </div>
     );
   }
