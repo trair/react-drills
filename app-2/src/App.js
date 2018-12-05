@@ -1,6 +1,29 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
+// import React, { Component } from 'react';
+// // import logo from './logo.svg';
+// import './App.css';
+
+// class App extends Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       list: ['spaghetti', 'ice cream', 'sushi', 'bologna', 'cheese']
+//     }
+//   }
+//   render() {
+//     return (
+//       <div className="App">
+//         {this.state.list.map((el, i) => (
+//           <h2 key={i}>{el}</h2>
+//         ))}
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+// Second Try
+import React, {Component} from 'react'
 
 class App extends Component {
   constructor() {
@@ -9,15 +32,16 @@ class App extends Component {
       list: ['spaghetti', 'ice cream', 'sushi', 'bologna', 'cheese']
     }
   }
+
   render() {
-    return (
-      <div className="App">
+    return(
+      <div>
         {this.state.list.map((el, i) => (
           <h2 key={i}>{el}</h2>
         ))}
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

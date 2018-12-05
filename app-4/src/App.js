@@ -1,16 +1,37 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
+// import React, { Component } from 'react';
+// // import logo from './logo.svg';
+// import './App.css';
+// import Login from './Components/Login'
+
+// class App extends Component {
+//     render() {
+//     return (
+//       <div className="App">
+//         <Login />
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+
+// Second Try
+import React, {Component} from 'react'
 import Login from './Components/Login'
+import './App.css'
 
 class App extends Component {
-    render() {
-    return (
+  state = {
+
+  }
+  render(){
+    return(
       <div className="App">
         <Login />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
