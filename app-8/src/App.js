@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://pokeapi.co/api/v2/pokemon/1')
+    axios.get('https://pokeapi.co/api/v2/pokemon/1/')
     .then(response => {
       this.setState({
         bulbasaur: response.data
@@ -22,8 +22,8 @@ class App extends Component {
       <div className="App">
         <h1>Name: {this.state.bulbasaur.name}</h1>
         <h2>Number: {this.state.bulbasaur.order}</h2>
-        <h2>Height: {this.state.bulbasaur.name}</h2>
-        <h2>Eye Color: {this.state.bulbasaur.name}</h2>
+        <h2>Height: {this.state.bulbasaur.height}</h2>
+        <h2>Weight: {this.state.bulbasaur.weight}</h2>
       </div>
     )
   }
